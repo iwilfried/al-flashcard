@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "al-flashcard",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

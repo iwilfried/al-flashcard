@@ -1,0 +1,7 @@
+{
+  "name": "al-flashcard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
