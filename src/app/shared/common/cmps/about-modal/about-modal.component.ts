@@ -1,13 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalService } from '../shared/providers/modal.service';
+import { ModalService } from 'src/app/shared/providers/modal.service';
 
 @Component({
-  selector: 'app-imprint-modal',
-  templateUrl: './imprint-modal.component.html',
-  styleUrls: ['./imprint-modal.component.scss'],
+  selector: 'app-about-modal',
+  templateUrl: './about-modal.component.html',
+  styleUrls: ['./about-modal.component.scss'],
 })
-export class ImprintModalComponent implements OnInit {
-
+export class AboutModalComponent implements OnInit {
   @Input() title = 'Modal Page';
   @Input() text = `
     A ​flashcard​ or ​flash card​ is a card bearing ​information​ on both sides, which is intended to be used as an aid in

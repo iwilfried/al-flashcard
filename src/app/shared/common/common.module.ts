@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
-
-import { HeaderComponent } from './header/header.component';
-import { PopoverMenuComponent } from './popover-menu/popover-menu.component'
 import { FormsModule } from '@angular/forms';
-import { ContentContainerComponent } from './content-container/content-container.component';
+import { IonicModule } from '@ionic/angular';
+import { PopoverMenuComponent } from './popover-menu/popover-menu.component';
+import {
+  HeaderComponent,
+  ContentContainerComponent,
+  AboutModalComponent,
+  DataPrivacyModalComponent,
+  ImprintModalComponent
+} from './cmps';
+
 
 @NgModule({
   imports: [
@@ -14,14 +19,20 @@ import { ContentContainerComponent } from './content-container/content-container
     IonicModule
   ],
   exports: [
-    HeaderComponent,
     PopoverMenuComponent,
-    ContentContainerComponent
+    HeaderComponent,
+    ContentContainerComponent,
+    AboutModalComponent,
+    DataPrivacyModalComponent,
+    ImprintModalComponent
   ],
   declarations: [
-    HeaderComponent,
     PopoverMenuComponent,
-    ContentContainerComponent
+    HeaderComponent,
+    ContentContainerComponent,
+    AboutModalComponent,
+    DataPrivacyModalComponent,
+    ImprintModalComponent
   ]
 })
 export class CommonsModule { }

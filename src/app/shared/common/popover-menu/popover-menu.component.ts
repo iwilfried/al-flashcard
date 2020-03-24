@@ -1,10 +1,13 @@
 import { Component, OnInit, Type } from '@angular/core';
 import { Router } from '@angular/router';
 import { PopoverController, ModalController } from "@ionic/angular";
+
 import { ModalService } from '../../providers/modal.service';
-import { AboutModalComponent } from 'src/app/about-modal/about-modal.component';
-import { ImprintModalComponent } from 'src/app/imprint-modal/imprint-modal.component';
-import { DataPrivacyModalComponent } from 'src/app/data-privacy-modal/data-privacy-modal.component';
+import {
+  AboutModalComponent,
+  ImprintModalComponent,
+  DataPrivacyModalComponent
+} from '../cmps/';
 
 @Component({
   selector: 'app-popover-menu',

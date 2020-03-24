@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalService } from '../shared/providers/modal.service';
+import { ModalService } from 'src/app/shared/providers/modal.service';
 
 @Component({
   selector: 'app-data-privacy-modal',
