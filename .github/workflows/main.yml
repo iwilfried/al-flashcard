@@ -1,0 +1,41 @@
+# A basic CI script to automate building / testing AL-flashcard app
+
+name: CI
+
+# Trigger on master push / pull requests
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    - name: setup Node
+      uses: actions/setup-node@1.1.0
+      with:
+        node-version: 12.8
+      
+    - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Install packages global
+      run: echo Installing..!
+    - run: npm install -g @ionic/cli > /dev/null
+    - run: npm install -g @angular/cli > /dev/null
+    - run: npm install
+    - run: npm run build
+
+    - name: Run tests
+      run: |
+        echo Running tests,
+    - run: npm test -- --configuration=ci
