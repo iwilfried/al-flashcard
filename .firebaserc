@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "flashcard-a9837": {
+      "hosting": {
+        "app": [
+          "flashcard-a9837"
+        ]
+      }
+    }
+  }
+}
