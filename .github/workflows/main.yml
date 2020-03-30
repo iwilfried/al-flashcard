@@ -24,7 +24,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      
+
     - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
       with:
         path: ~/.npm
@@ -38,6 +38,7 @@ jobs:
     - run: npm install -g @ionic/cli > /dev/null
     - run: npm install -g @angular/cli > /dev/null
     - run: npm ci
+
     - run: npm run build
 
     - name: Run tests
