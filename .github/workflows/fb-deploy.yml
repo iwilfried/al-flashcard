@@ -1,0 +1,33 @@
+name: CD
+
+on:
+  push:
+    branches: 
+      - master
+      - test
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install Dependencies (lacal and global)
+      run: npm install && npm install --global @ionic/cli@latest firebase-tools@latest
+    
+    - name: Build Project in prod mode
+      run: npm run-script build:prod
+    
+    - name: Publish to Firebase hosting
+      env: 
+        FIREBASE_TOKEN: ${{ secrets.FB_SECRET }}
+      run: npx firebase deploy --only hosting --project al-flashcard-proj --token "$FIREBASE_TOKEN"

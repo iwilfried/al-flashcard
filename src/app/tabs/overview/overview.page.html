@@ -1,6 +1,6 @@
 <app-header title="Accelerated Learning"></app-header>
 
-<ion-content [fullscreen]="true">
+<ion-content fullscreen="true">
   <app-content-container name="Overview">
     <div class="container">
       <ion-text>
@@ -15,7 +15,8 @@
         <p class="overview-text">{{overviewTextContent.description}}</p>
       </ion-text>
 
-      <accord-simple-accordion [accordionList]="accordItems" [accordionStyling]="accordStyling" ></accord-simple-accordion>
+      <accord-simple-accordion [accordionList]="accordItems" [accordionStyling]="accordStyling" openSign="assets/icons/plus.png" closeSign="assets/icons/minis.png" ></accord-simple-accordion>
+
     </div>
   </app-content-container>
 </ion-content>

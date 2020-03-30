@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { Accordion } from '@ngx-dummy/accordion-simple/lib/IAccordion';
 import { IAccordionStyling } from "@ngx-dummy/accordion-simple/helpers/IAccordionStylings";
 
