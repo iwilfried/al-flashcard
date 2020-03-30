@@ -2,7 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: 
+      - master
+      - test
 
 jobs:
   build:
@@ -28,4 +30,4 @@ jobs:
     - name: Publish to Firebase hosting
       env: 
         FIREBASE_TOKEN: ${{ secrets.FB_SECRET }}
-      run: npx firebase deploy --token "$FIREBASE_TOKEN"
+      run: npx firebase deploy --only hosting --project al-flashcard-proj --token "$FIREBASE_TOKEN"

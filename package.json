@@ -8,7 +8,7 @@
     "start": "ionic serve --consolelogs --source-map --external -p=8088",
     "build": "ionic build --source-map",
     "build:prod": "ionic build --prod --source-map --engine=browser",
-    "ci:fb:deploy": "firebase deploy --token \"$FB_SECRET\"",
+    "ci:fb:deploy": "firebase deploy --only hosting --project al-flashcard-proj --token \"$FB_SECRET\"",
     "ng": "ng",
     "ng:build": "ng build",
     "test": "ng test",
