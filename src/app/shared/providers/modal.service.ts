@@ -9,14 +9,14 @@ export class ModalService {
 
   constructor(private modalCtrl: ModalController) { }
 
-  public createModal = async ({ component, componentProps }: { component: Type<any>, componentProps: { [key: string]: any; }; }) => {
+  public createModal = async ({ component, componentProps }: { component: Type<any>, componentProps: { [key: string]: any; }; }): Promise<void> => {
     this.modalPage = await this.modalCtrl.create({
       component,
+      componentProps,
       id: component.name,
       animated: true,
-      backdropDismiss: false,
-      showBackdrop: false,
-      componentProps
+      backdropDismiss: true,
+      showBackdrop: true
     });
     return this.modalPage.present();
   };
