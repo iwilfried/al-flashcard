@@ -1,8 +1,7 @@
-.popover {
-  // position: absolute;
-  // top: 0;
-  // right: 0;
-  // height: 100px;
-  // background-color: red;
-  // color: green;
+.menu-item {
+  &:hover {
+    cursor: pointer;
+    --background: #f1f1f1 !important;
+  }
+  
 }
