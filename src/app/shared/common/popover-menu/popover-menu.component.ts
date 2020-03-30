@@ -3,11 +3,10 @@ import { Router } from '@angular/router';
 import { PopoverController, ModalController } from "@ionic/angular";
 
 import { ModalService } from '../../providers/modal.service';
-import {
-  AboutModalComponent,
-  ImprintModalComponent,
-  DataPrivacyModalComponent
-} from '../cmps/';
+import { AboutModalComponent } from '../cmps/about-modal/about-modal.component';
+import { ImprintModalComponent } from '../cmps/imprint-modal/imprint-modal.component';
+import { DataPrivacyModalComponent } from '../cmps/data-privacy-modal/data-privacy-modal.component';
+
 
 @Component({
   selector: 'app-popover-menu',
