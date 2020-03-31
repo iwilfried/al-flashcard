@@ -41,12 +41,16 @@ export class OverviewPage {
   };
 
   accordStyling: IAccordionStyling = {
-    guttedItems: '1rem',
+    itemsGutts: '1rem',
+    margin: '1rem',
+    maxWidth: '90%',
 
     itemStyling: {
       headBgColor: '#4197b2',
       margin: '0',
-      padding: '0'
+      padding: '0',
+      bodyBgColor: '#f1f1f1',
+      bodyMargin: '2px'
     }
   };
 

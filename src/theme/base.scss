@@ -48,11 +48,53 @@ app-data-privacy-modal
 }
 
 @media screen and (max-width: 360px) {
+
   .app-header {
     .app-header__title {
       font-size: 1.2rem;
     }
+    
   }
+}
+
+@media  screen and (min-width: 770px) {
+  
+  ion-popover {
+    .popover-content {
+      left: 37rem !important;    
+    }
+  }
+
+}
+
+@media  screen and (min-width: 1024px) {
+  
+  ion-popover {
+    .popover-content {
+      left: 55rem !important;    
+    }
+  }
+
+}
+
+@media  screen and (min-width: 1520px) {
+  
+  ion-popover {
+    .popover-content {
+      left: 65rem !important;    
+    }
+  }
+
+}
+
+@media  screen and (min-width: 1920px) {
+  
+  ion-popover {
+    .popover-content {
+      left: 80rem !important;    
+    }
+  }
+
 }
 
 // .app-menu__popover {
