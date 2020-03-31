@@ -3,19 +3,28 @@
 <ion-content fullscreen="true">
   <app-content-container name="Overview">
     <div class="container">
-      <ion-text>
-        <h3 class="overview-h3">{{overviewTextContent.subtitle}}</h3>
-      </ion-text>
-      <br />
-      <ion-label>
-        <h2 class="overview-h2">{{overviewTextContent.title}}</h2>
-      </ion-label>
-      <br />
-      <ion-text>
-        <p class="overview-text">{{overviewTextContent.description}}</p>
-      </ion-text>
 
-      <accord-simple-accordion [accordionList]="accordItems" [accordionStyling]="accordStyling" openSign="assets/icons/plus.png" closeSign="assets/icons/minus.png" ></accord-simple-accordion>
+      <ion-item>
+        <ion-card-title class="big">
+          {{overviewTextContent.subtitle}}
+        </ion-card-title>
+
+        <ion-button slot="end" fill="outline">
+          First Set
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-card-subtitle>
+          {{overviewTextContent.title}}
+        </ion-card-subtitle>
+      </ion-item>
+
+      <ion-card-content>
+        {{overviewTextContent.description}}
+      </ion-card-content>
+
+      <accord-simple-accordion [accordionList]="accordItems" [accordionStyling]="accordStyling" openSign="assets/icons/plus.png" closeSign="assets/icons/minus.png"></accord-simple-accordion>
 
     </div>
   </app-content-container>

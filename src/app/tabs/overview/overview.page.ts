@@ -42,7 +42,7 @@ export class OverviewPage {
 
   accordStyling: IAccordionStyling = {
     itemsGutts: '1rem',
-    margin: '1rem',
+    margin: '2rem auto',
     maxWidth: '90%',
 
     itemStyling: {
