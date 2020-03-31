@@ -49,8 +49,9 @@ export class OverviewPage {
       headBgColor: '#4197b2',
       margin: '0',
       padding: '0',
-      bodyBgColor: '#f1f1f1',
-      bodyMargin: '2px'
+      bodyBgColor: '#fbfbfb',
+      bodyMargin: '2px',
+      bodyPadding: '1rem'
     }
   };
 

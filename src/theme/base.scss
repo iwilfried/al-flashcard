@@ -57,6 +57,12 @@ app-data-privacy-modal
   @include __getPageTitle;
 }
 
+accord-simple-accordion-item {
+  header.accord-item__header {
+    cursor: pointer;
+  }
+}
+
 @media screen and (max-width: 360px) {
 
   .app-header {
@@ -91,13 +97,33 @@ app-data-privacy-modal
   
   ion-popover {
     .popover-content {
-      left: 50rem !important;    
+      left: 35rem !important;    
     }
   }
 
 }
 
-@media  screen and (min-width: 1520px) {
+@media  screen and (min-width: 1120px) {
+  
+  ion-popover {
+    .popover-content {
+      left: 37rem !important;    
+    }
+  }
+
+}
+
+@media  screen and (min-width: 1220px) {
+  
+  ion-popover {
+    .popover-content {
+      left: 45rem !important;    
+    }
+  }
+
+}
+
+@media  screen and (min-width: 1420px) {
   
   ion-popover {
     .popover-content {
