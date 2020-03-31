@@ -78,6 +78,8 @@
   --ion-font-family: "Roboto", "Helvetica Neue", sans-serif;
 
   --ion-color-overview--h2: '#004d4d';
+
+  --header-color: #21505C;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -234,6 +236,6 @@
   }
 
   app-header {
-    --color: #424242;
+    --color: #21505C;
   }
 }
