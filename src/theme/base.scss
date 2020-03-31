@@ -15,6 +15,17 @@ body {
   touch-action: manipulation;
 }
 
+app-overview {
+
+  .big {
+    font-size: 28px;
+    font-family: lato;
+    color: #004d4d;
+    font-weight: 700;
+  }
+
+}
+
 app-tests,
 app-overview,
 app-syllabus,
@@ -127,13 +138,23 @@ accord-simple-accordion-item {
   
   ion-popover {
     .popover-content {
-      left: 65rem !important;    
+      left: 64rem !important;    
     }
   }
 
 }
 
 @media  screen and (min-width: 1920px) {
+  
+  ion-popover {
+    .popover-content {
+      left: 74rem !important;    
+    }
+  }
+
+}
+
+@media  screen and (min-width: 2160px) {
   
   ion-popover {
     .popover-content {
