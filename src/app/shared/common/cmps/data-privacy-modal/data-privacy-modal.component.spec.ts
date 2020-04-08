@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { DataPrivacyModalComponent } from './data-privacy-modal.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('DataPrivacyModalComponent', () => {
   let component: DataPrivacyModalComponent;
@@ -10,7 +11,8 @@ describe('DataPrivacyModalComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ DataPrivacyModalComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot()],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
 
     fixture = TestBed.createComponent(DataPrivacyModalComponent);

@@ -44,4 +44,4 @@ jobs:
     - name: Run tests
       run: |
         echo Running tests,
-    - run: npm test -- --configuration=ci
+    - run: npm run test:ci -- --configuration=ci
