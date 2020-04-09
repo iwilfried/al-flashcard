@@ -25,23 +25,27 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
+    - name: Cache node modules
+      uses: actions/cache@v1
+      env:
+        cache-name: cache-node-modules
       with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-node-
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
 
     - name: Install packages global
-      run: echo Installing..!
-      
-    - run: npm install -g @ionic/cli > /dev/null
-    - run: npm install -g @angular/cli > /dev/null
-    - run: npm ci
-
-    - run: npm run build
+      run: |
+        echo Installing..!
+        npm install -g @ionic/cli > /dev/null
+        npm install -g @angular/cli > /dev/null
+        npm ci
+        npm run build
 
     - name: Run tests
       run: |
-        echo Running tests,
-    - run: npm run test:ci -- --configuration=ci
+        echo Running tests
+        npm run test:ci -- --configuration=ci

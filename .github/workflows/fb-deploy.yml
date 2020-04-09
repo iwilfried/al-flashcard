@@ -1,13 +1,15 @@
 name: CD
+author: Vladimir Ovsyukov <vovansuper@mail.ru>
 
 on:
   push:
     branches: 
       - master
+      - releases
       - test
 
 jobs:
-  build:
+  build_and_fbdeploy:
     runs-on: ubuntu-latest
 
     strategy:
@@ -21,11 +23,31 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Cache node modules
+      uses: actions/cache@v1
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+
     - name: Install Dependencies (lacal and global)
-      run: npm install && npm install --global @ionic/cli@latest firebase-tools@latest
+      run: |
+        npm ci
+        npm install --global @ionic/cli@latest firebase-tools@latest
     
     - name: Build Project in prod mode
-      run: npm run-script build:prod
+      run: npm run build:prod --if-present
+    
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: build_artifact
+        path: www
     
     - name: Publish to Firebase hosting
       env: 
